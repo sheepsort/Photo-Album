@@ -6,4 +6,8 @@ class Photo implements Validateable {
   String title
   String url
   String thumbnailUrl
+
+  static constraints = {
+    albumId min: 1
+  }
 }

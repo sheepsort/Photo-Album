@@ -30,4 +30,32 @@ class PhotoSpec extends Specification {
     then:
     photo.validate()
   }
+
+  @Unroll
+  void "When the Photo's #attribute is #value, validation is #isValid with exception #reason"(
+      String attribute,
+      def testValue,
+      boolean isValid,
+      String reason
+  ) {
+    given: "A new photo is created"
+    Photo photo = new Photo(photoParams)
+
+    when: "The photo's attribute is set to the value under test"
+    photo."$attribute" = testValue
+
+    then: "The photo should pass or fail validation"
+    photo.validate() == isValid
+
+    and: "The photo has the correct error message, if necessary"
+    Integer reasonIndex = 0
+    if (!isValid) {
+      reasonIndex = photo.errors.getFieldError("$attribute").defaultMessage.indexOf(reason)
+    }
+    reasonIndex > -1
+
+    where: "Some value is assigned to the attribute"
+    attribute | testValue || isValid | reason
+    'albumId' | 0         || false   | 'minimum value'
+  }
 }
