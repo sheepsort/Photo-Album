@@ -32,7 +32,7 @@ class PhotoSpec extends Specification {
   }
 
   @Unroll
-  void "When the Photo's #attribute is #value, validation is #isValid with exception #reason"(
+  void "When the Photo's #attribute is #testValue, validation is #isValid with exception #reason"(
       String attribute,
       def testValue,
       boolean isValid,
