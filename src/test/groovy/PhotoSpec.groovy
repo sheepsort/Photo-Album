@@ -4,7 +4,7 @@ import spock.lang.Unroll
 class PhotoSpec extends Specification {
   Map photoParams
 
-  void beforeEach() {
+  void setup() {
     // example photo from https://jsonplaceholder.typicode.com/photos?id=1
     photoParams = [
         "albumId"     : 1,
@@ -21,5 +21,13 @@ class PhotoSpec extends Specification {
 
     then:
     notThrown()
+  }
+
+  void 'A Photo will pass validation when given valid parameters'() {
+    when:
+    Photo photo = new Photo(photoParams)
+
+    then:
+    photo.validate()
   }
 }
