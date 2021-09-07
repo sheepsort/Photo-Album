@@ -8,6 +8,10 @@ class Photo implements Validateable {
   String thumbnailUrl
 
   static constraints = {
-    albumId min: 1
+    albumId min: 1, nullable: false
+    id min: 1, nullable: false
+    title nullable: false, blank: false
+    url nullable: false, blank: false
+    thumbnailUrl nullable: false, blank: false
   }
 }

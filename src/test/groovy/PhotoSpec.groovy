@@ -55,7 +55,16 @@ class PhotoSpec extends Specification {
     reasonIndex > -1
 
     where: "Some value is assigned to the attribute"
-    attribute | testValue || isValid | reason
-    'albumId' | 0         || false   | 'minimum value'
+    attribute      | testValue || isValid | reason
+    'albumId'      | 0         || false   | 'minimum value'
+    'albumId'      | null      || false   | 'cannot be null'
+    'id'           | 0         || false   | 'minimum value'
+    'id'           | null      || false   | 'cannot be null'
+    'title'        | null      || false   | 'cannot be null'
+    'title'        | ''        || false   | 'cannot be blank'
+    'url'          | null      || false   | 'cannot be null'
+    'url'          | ''        || false   | 'cannot be blank'
+    'thumbnailUrl' | null      || false   | 'cannot be null'
+    'thumbnailUrl' | ''        || false   | 'cannot be blank'
   }
 }
