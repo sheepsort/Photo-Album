@@ -8,6 +8,7 @@ class UrlMappings {
         // apply constraints here
       }
     }
+    "/photos"(controller: "photoController", action: "printPhotosByAlbum")
 
     "/"(view: "/index")
     "500"(view: '/error')
