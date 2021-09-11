@@ -6,7 +6,7 @@ class PhotoService {
     ApiClientService apiClientService
     PrintService printService
 
-    protected static final PHOTO_URL = 'https://jsonplaceholder.typicode.com/photos?id=1'
+    protected static final PHOTO_URL = 'https://jsonplaceholder.typicode.com/photos'
 
     /**
      * The printPhotosByAlbum method is the entry point to interaction with our Photo Service.
