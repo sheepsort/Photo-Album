@@ -70,7 +70,7 @@ class PhotoService {
     }
 
     private void printAlbum(int albumId, ArrayList<Photo> photos) {
-        printService.logToConsole("photo-album ${albumId}")
+        printService.logToConsole("> photo-album ${albumId}")
 
         photos.each { Photo photo ->
             printService.logToConsole("[${photo.id}] ${photo.title}")

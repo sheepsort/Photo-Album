@@ -56,7 +56,7 @@ class PhotoServiceSpec extends Specification implements ServiceUnitTest<PhotoSer
 
         then:
         // This ID value comes from the mock, which is copied values from the API request.
-        1 * printService.logToConsole("photo-album 1")
+        1 * printService.logToConsole("> photo-album 1")
     }
 
     void "when printPhotosByAlbum is called and photos are found, the print service logs each photo's id and title"() {
