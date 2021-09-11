@@ -1,3 +1,5 @@
+package lt.photo.album
+
 import grails.validation.Validateable
 
 class Photo implements Validateable {

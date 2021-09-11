@@ -1,3 +1,5 @@
+package lt.photo.album
+
 import spock.lang.Specification
 import spock.lang.Unroll
 
